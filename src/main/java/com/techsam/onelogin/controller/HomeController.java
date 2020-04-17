@@ -15,6 +15,6 @@ public class HomeController {
   @GetMapping
   public String home(ExpiringUsernameAuthenticationToken userToken) {
     User user = (User) userToken.getPrincipal();
-    return StringFormatter.format("Welcome %s", user.getId()).getValue();
+    return StringFormatter.format("<http><head></head><body><h1>Welcome %s</h1><a href='/saml/logout'>LOGOUT</a></body></html>", user.getId()).getValue();
   }
 }
